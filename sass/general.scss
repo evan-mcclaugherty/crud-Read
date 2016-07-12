@@ -1,0 +1,51 @@
+.fa-remove {
+    color: $alert;
+}
+.delete {
+    background-color: $alert;
+}
+.active {
+    background-color: $light-grey;
+}
+h1 {
+    @include primary-header-font
+}
+p {
+    @include body-font;
+}
+a {
+    text-decoration: none;
+    @include body-font;
+}
+input,
+label {
+    display: block;
+    @include body-font;
+}
+label {
+    font-size: 1rem;
+}
+input {
+    margin-bottom: 1rem;
+}
+.new {
+    font-weight: 700;
+    color: $white;
+    padding: 1rem;
+    display: block;
+    background-color: $success;
+    transition: background-color 300ms;
+    &:hover {
+        background-color: lighten($success, 10%);
+    }
+}
+button,
+input[type=submit] {
+    border: none;
+    padding: 1rem;
+    color: $white;
+    font-weight: 700;
+    box-shadow: 2px 2px 1px $light-grey;
+    cursor: pointer;
+    width: 100%;
+}

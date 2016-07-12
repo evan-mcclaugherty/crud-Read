@@ -1,8 +1,68 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+.fa-remove {
+  color: #bf4040; }
+
+.delete {
+  background-color: #bf4040; }
+
+.active {
+  background-color: #cccccc; }
+
+h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 700; }
+
+p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400; }
 
 a {
-  color: #00B7FF;
-}
+  text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400; }
+
+input,
+label {
+  display: block;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400; }
+
+label {
+  font-size: 1rem; }
+
+input {
+  margin-bottom: 1rem; }
+
+.new {
+  font-weight: 700;
+  color: #fff;
+  padding: 1rem;
+  display: block;
+  background-color: #40bf40;
+  transition: background-color 300ms; }
+  .new:hover {
+    background-color: #66cc66; }
+
+button,
+input[type=submit] {
+  border: none;
+  padding: 1rem;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 2px 2px 1px #cccccc;
+  cursor: pointer;
+  width: 100%; }
+
+header {
+  background-color: #4d4d4d;
+  color: #f7901e;
+  padding: 1rem; }
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh; }
