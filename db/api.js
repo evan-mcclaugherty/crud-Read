@@ -1,5 +1,5 @@
-var books = require('./books');
+var book = require('./book');
 
 module.exports = {
-    books: books
+    book: book
 }
