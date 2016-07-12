@@ -1,8 +1,13 @@
+img {
+  max-height: 15vh;
+  width: auto;
+  border-radius: 100%; }
+
 .fa-remove {
-  color: #bf4040; }
+  color: #f1574b; }
 
 .delete {
-  background-color: #bf4040; }
+  background-color: #f1574b; }
 
 .active {
   background-color: #cccccc; }
@@ -38,28 +43,29 @@ input {
 
 .new {
   font-weight: 700;
-  color: #fff;
+  color: #F0F0F0;
   padding: 1rem;
   display: block;
-  background-color: #40bf40;
+  background-color: #9ada59;
   transition: background-color 300ms; }
   .new:hover {
-    background-color: #66cc66; }
+    background-color: #b3e383; }
 
 button,
 input[type=submit] {
   border: none;
   padding: 1rem;
-  color: #fff;
+  color: #F0F0F0;
   font-weight: 700;
   box-shadow: 2px 2px 1px #cccccc;
   cursor: pointer;
   width: 100%; }
 
 header {
-  background-color: #4d4d4d;
-  color: #f7901e;
-  padding: 1rem; }
+  background-color: #978f92;
+  color: #b02041;
+  padding: 1rem;
+  display: flex; }
 
 main {
   display: flex;
