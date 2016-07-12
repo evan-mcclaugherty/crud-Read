@@ -1,0 +1,4 @@
+DATABASE_URL=Heroku PostgresQL URL here.
+DB_HOST=Local PG database name here.
+DB_USER=Local PG user name here.
+DB_PASSWORD=Local PG password here.
