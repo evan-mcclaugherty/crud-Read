@@ -4,6 +4,7 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
     api.book.getAllBooks().then(books => {
+        api.author.getAuthor(books)
         res.render('book/book', {
             book: books
         })

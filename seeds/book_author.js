@@ -1,6 +1,6 @@
 exports.seed = function(knex, Promise) {
     return knex.raw("TRUNCATE author_book RESTART IDENTITY CASCADE").then(function() {
-        return Promise.join(
+        return Promise.all([
             knex('author_book').insert({
                 author_id: '1',
                 book_id: '1'
@@ -33,6 +33,6 @@ exports.seed = function(knex, Promise) {
                 author_id: '4',
                 book_id: '6'
             })
-        );
+        ]);
     });
 };
