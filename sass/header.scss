@@ -2,5 +2,9 @@ header {
     background-color: $dark-grey;
     color: $primary-color;
     padding: 1rem;
-    display: flex;
+    img {
+        max-height: 15vh;
+        width: auto;
+        border-radius: 100%;
+    }
 }

@@ -1,5 +1,4 @@
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 80vh; }
+main nav {
+  min-width: 20vw; }
+  main nav li {
+    min-height: 40vh; }
