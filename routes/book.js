@@ -11,6 +11,24 @@ router.get('/new', function(req, res, next) {
     })
 });
 
+router.get('/edit/:id', (req, res, next) => {
+    api.book.getBook(req.params.id).then(book => {
+        api.book.getGenres().then(genres => {
+            res.render('book/editBook', {
+                book: book,
+                genres: genres,
+                thisGenreName: genres.filter(ea => book.genre_id == ea.id)[0].genre_name
+            })
+        })
+    })
+})
+
+router.put('/:id', (req, res, next) => {
+    api.book.editBook(req.params.id, req.body).then(() => {
+        res.redirect('/')
+    })
+})
+
 router.post('/', (req, res, next) => {
     api.book.insertBook(req.body).then(() => {
         res.redirect('/')

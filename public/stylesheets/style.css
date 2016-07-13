@@ -63,6 +63,9 @@ main nav {
   main nav li {
     min-height: 40vh; }
 
+.editBook .inline {
+  display: inline; }
+
 .bookForm h2 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2rem;

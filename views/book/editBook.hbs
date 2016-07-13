@@ -1,0 +1,20 @@
+<section class="editBook">
+  <h2>Edit Book</h2>
+  <form action="/book/{{book.id}}?_method=PUT" method="post">
+    <label for="title">Title</label>
+    <input id="title" type="text" name="title" value="{{book.title}}">
+    <label for="description">Description</label>
+    <input id="description" type="text" name="description" value="{{book.description}}">
+    <label for="cover_url">Book Cover Image</label>
+    <input id="cover_url" type="text" name="cover_url" value="{{book.cover_url}}">
+    <label for="genre_id">Select or Add a different Genre</label>
+    <select id="genre_id" name="genre_id">
+      <option selected value="{{book.genre_id}}">{{thisGenreName}}</option>
+      {{#each genres}}
+        <option value="{{id}}">{{genre_name}}</option>
+      {{/each}}
+    </select>
+    <input class="inline" id="genre_id" type="text" name="genre_id" placeholder="New Genre">
+    <input type="submit" value="Edit Book">
+  </form>
+</section>
