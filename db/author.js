@@ -1,51 +1,24 @@
 var knex = require('./dbConnection');
 
 module.exports = {
-    insertGenre: (genre) => {
-        return knex('genre').insert({
-            genre_name: genre
-        }, 'id')
-    },
     getAuthor: (id) => knex('author').where('id', id).first(),
     getAllAuthors: () => knex('author').select(),
-    getGenres: () => knex('genre').select(),
-    deleteBook: (id) => knex('book').where('id', id).del(),
-    editBook: function(id, data) {
-        if (data.genre_id[1]) {
-            return this.insertGenre(data.genre_id[1]).then(newId => {
-                return knex('book').update({
-                    title: data.title,
-                    description: data.description,
-                    cover_url: data.cover_url,
-                    genre_id: newId[0]
-                }).where('id', id)
-            })
-        } else {
-            return knex('book').update({
-                title: data.title,
-                description: data.description,
-                cover_url: data.cover_url,
-                genre_id: data.genre_id[0]
-            }).where('id', id)
-        }
+    deleteAuthor: (id) => knex('author').where('id', id).del(),
+    editAuthor: function(id, data) {
+        return knex('author').update({
+            first_name: data.first_name,
+            last_name: data.last_name,
+            biography: data.biography,
+            portrait_url: data.portrait_url
+        }).where('id', id)
     },
-    insertBook: function(data) {
-        if (data.genre_id[1]) {
-            return this.insertGenre(data.genre_id[1]).then(id => {
-                return knex('book').insert({
-                    title: data.title,
-                    description: data.description,
-                    cover_url: data.cover_url,
-                    genre_id: id[0]
-                })
-            })
-        } else {
-            return knex('book').insert({
-                title: data.title,
-                description: data.description,
-                cover_url: data.cover_url,
-                genre_id: data.genre_id[0]
-            })
-        }
+    insertAuthor: data => {
+        console.log(data);
+        return knex('author').insert({
+            first_name: data.first_name,
+            last_name: data.last_name,
+            biography: data.biography,
+            portrait_url: data.portrait_url
+        })
     }
 }
