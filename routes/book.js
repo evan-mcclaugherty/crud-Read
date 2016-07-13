@@ -11,4 +11,10 @@ router.get('/new', function(req, res, next) {
     })
 });
 
+router.post('/', (req, res, next) => {
+    api.book.insertBook(req.body).then(() => {
+        res.redirect('/')
+    })
+})
+
 module.exports = router;
