@@ -1,0 +1,14 @@
+<section class="flex specificAuthor">
+  <img src="{{author.portrait_url}}" />
+  <div>
+    {{author.first_name}} {{author.last_name}}
+    <br> {{author.biography}}
+    <br>
+    <a href="/author/delete/{{book.id}}">
+      <i class="fa fa-remove" aria-hidden="true"></i>
+    </a>
+    <a href="/author/edit/{{book.id}}">
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    </a>
+  </div>
+</section>

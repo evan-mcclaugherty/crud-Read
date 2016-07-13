@@ -6,7 +6,7 @@ module.exports = {
             genre_name: genre
         }, 'id')
     },
-    getBook: (id) => knex('book').where('id', id).first(),
+    getAuthor: (id) => knex('author').where('id', id).first(),
     getAllAuthors: () => knex('author').select(),
     getGenres: () => knex('genre').select(),
     deleteBook: (id) => knex('book').where('id', id).del(),

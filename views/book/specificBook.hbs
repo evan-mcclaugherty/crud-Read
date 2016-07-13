@@ -4,8 +4,11 @@
     {{book.title}}
     <br> {{book.description}}
     <br>
-    <form action="/book/{{book.id}}?_method=DELETE" method="post">
-      <button type="submit">Delete {{book.title}}?</button>
-    </form>
+    <a href="/book/delete/{{book.id}}">
+      <i class="fa fa-remove" aria-hidden="true"></i>
+    </a>
+    <a href="/book/edit/{{book.id}}">
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+    </a>
   </div>
 </section>
