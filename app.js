@@ -26,8 +26,8 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', book);
-app.use('/author', author);
 app.use('/book', book);
+app.use('/author', author);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

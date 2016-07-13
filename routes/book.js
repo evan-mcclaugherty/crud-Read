@@ -10,13 +10,6 @@ router.get('/', function(req, res, next) {
     })
 });
 
-router.get('/:id', (req, res, next) => {
-    api.book.getBook(req.params.id).then(book => {
-        res.render('book/specificBook', {
-            book: book
-        })
-    })
-})
 
 router.get('/new', function(req, res, next) {
     api.book.getGenres().then(genres => {
@@ -25,6 +18,14 @@ router.get('/new', function(req, res, next) {
         });
     })
 });
+
+router.get('/specific/:id', (req, res, next) => {
+    api.book.getBook(req.params.id).then(book => {
+        res.render('book/specificBook', {
+            book: book
+        })
+    })
+})
 
 router.get('/edit/:id', (req, res, next) => {
     api.book.getBook(req.params.id).then(book => {
