@@ -6,8 +6,10 @@ module.exports = {
             genre_name: genre
         }, 'id')
     },
+    getBook: (id) => knex('book').where('id', id).first(),
     getAllBooks: () => knex('book').select(),
     getGenres: () => knex('genre').select(),
+    deleteBook: (id) => knex('book').where('id', id).del(),
     insertBook: function(data) {
         if (data.genre_id[1]) {
             return this.insertGenre(data.genre_id[1]).then(id => {

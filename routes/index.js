@@ -5,7 +5,6 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/', function(req, res, next) {
     api.book.getAllBooks().then(books => {
-        console.log(books);
         res.render('book/book', {
             book: books
         })
