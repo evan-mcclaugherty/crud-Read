@@ -2,7 +2,9 @@
   <section class="flex books">
     <img src="{{cover_url}}" />
     <div>
-      {{title}}
+      <a href="/book/{{id}}">
+          {{title}}
+      </a>
       <br> {{description}}
       <br>
       <a href="/book/delete/{{id}}">

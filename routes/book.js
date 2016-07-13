@@ -2,6 +2,21 @@ var api = require('../db/api');
 var express = require('express');
 var router = express.Router();
 
+router.get('/', function(req, res, next) {
+    api.book.getAllBooks().then(books => {
+        res.render('book/book', {
+            book: books
+        })
+    })
+});
+
+router.get('/:id', (req, res, next) => {
+    api.book.getBook(req.params.id).then(book => {
+        res.render('book/specificBook', {
+            book: book
+        })
+    })
+})
 
 router.get('/new', function(req, res, next) {
     api.book.getGenres().then(genres => {
