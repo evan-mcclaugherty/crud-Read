@@ -6,12 +6,16 @@
     <input id="title" type="text" name="title">
     <label for="description">Description</label>
     <textarea id="description" type="text" name="description"></textarea>
-    <input type="submit" value="Add Book">
-    <label for="cover_url" >Book Cover Image</label>
+    <label for="cover_url">Book Cover Image</label>
     <input id="cover_url" type="text" name="cover_url" placeholder="image url">
-    <label for="genre_id">Genre</label>
+    <label for="genre_id">Select or Add a Genre</label>
     <select id="genre_id" name="genre_id">
-        
+        <option selected disabled>Pick a Genre</option>
+      {{#each genres}}
+        <option value="{{genre_id}}">{{genre_name}}</option>
+      {{/each}}
     </select>
+    <input class="inline" id="genre_id" type="text" name="genre_id" placeholder="New Genre">
+    <input type="submit" value="Add Book">
   </form>
 </section>

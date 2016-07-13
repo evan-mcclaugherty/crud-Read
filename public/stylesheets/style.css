@@ -30,7 +30,8 @@ h1 {
   font-size: 2rem;
   font-weight: 700; }
 
-p, li {
+li,
+p {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
   font-weight: 400; }
@@ -40,6 +41,13 @@ a {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
   font-weight: 400; }
+
+input,
+label {
+  display: block; }
+
+input {
+  margin-bottom: 1rem; }
 
 header {
   background-color: #978f92;
@@ -54,3 +62,18 @@ main nav {
   min-width: 20vw; }
   main nav li {
     min-height: 40vh; }
+
+.bookForm h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1rem; }
+
+.bookForm,
+.bookForm select {
+  display: inline;
+  margin-right: 1rem; }
+
+.bookForm,
+.bookForm .inline {
+  display: inline; }

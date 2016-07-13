@@ -10,24 +10,21 @@
 h1 {
     @include primary-header-font
 }
-p, li {
+li,
+p {
     @include body-font;
 }
 a {
     text-decoration: none;
     @include body-font;
 }
-// input,
-// label {
-//     display: block;
-//     @include body-font;
-// }
-// label {
-//     font-size: 1rem;
-// }
-// input {
-//     margin-bottom: 1rem;
-// }
+input,
+label {
+    display: block;
+}
+input {
+    margin-bottom: 1rem;
+}
 // .new {
 //     font-weight: 700;
 //     color: $white;
