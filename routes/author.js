@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    api.author.getBookWithAuthors().then(authors => {
+    api.author.getBooksWithAuthors().then(authors => {
         res.render('author/author', {
             author: authors
         })
@@ -13,7 +13,6 @@ router.get('/', function(req, res, next) {
 
 router.get('/specific/:id', (req, res, next) => {
     api.author.getSingleBookWithAuthors(req.params.id).then(data => {
-        console.log(data);
         res.render('author/specificAuthor', {
             author: data.author[0],
             bookNames: data.bookNames

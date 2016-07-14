@@ -9,7 +9,15 @@ module.exports = {
 
     getBook: (id) => knex('book').where('id', id).first(),
 
-    getAllBooksWithAuthor: () => knex('book').join('author_book', 'book.id', 'author_book.author_id').join('author', 'author.id', 'author_book.author_id'),
+    getAuthorsWithBooks: () => knex('book').map(ea => {
+        return knex('author_book').where('book_id', ea.id).pluck('author_id').then(authorIds => {
+            return knex('author').whereIn('author.id', authorIds).then(authors => {
+                return Object.assign(ea, {
+                    authors
+                })
+            })
+        })
+    }),
 
     getSingleBookWithAuthors: (id) => knex('book').where('id', id)
         .then(book => knex('author_book').where('book_id', id).pluck('author_id')

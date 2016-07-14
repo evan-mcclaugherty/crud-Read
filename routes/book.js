@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-    api.book.getAllBooksWithAuthor().then(data => {
+    api.book.getAuthorsWithBooks().then(data => {
         res.render('book/book', {
             data: data
         })
