@@ -1,6 +1,13 @@
 var knex = require('./dbConnection');
 
 module.exports = {
+    insertAuthorBook: (authorID, bookID) => {
+        return knex('author_book').insert({
+            author_id: authorID,
+            book_id: bookID
+        })
+    },
+
     insertGenre: (genre) => {
         return knex('genre').insert({
             genre_name: genre
@@ -62,6 +69,8 @@ module.exports = {
                     description: data.description,
                     cover_url: data.cover_url,
                     genre_id: id[0]
+                }, 'id').then(id => {
+                    return this.insertAuthorBook(data.author_id, id[0])
                 })
             })
         } else {
@@ -70,6 +79,8 @@ module.exports = {
                 description: data.description,
                 cover_url: data.cover_url,
                 genre_id: data.genre_id[0]
+            }, 'id').then(id => {
+                return this.insertAuthorBook(data.author_id, id[0])
             })
         }
     }

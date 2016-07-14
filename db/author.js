@@ -3,6 +3,8 @@ var knex = require('./dbConnection');
 module.exports = {
     getAuthor: (id) => knex('author').where('id', id).first(),
 
+    getAuthors: () => knex('author'),
+
     getBooksWithAuthors: () => knex('author').map(ea => {
         return knex('author_book').where('author_id', ea.id).pluck('book_id').then(bookIds => {
             return knex('book').whereIn('book.id', bookIds).then(books => {

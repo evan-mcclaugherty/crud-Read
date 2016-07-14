@@ -10,12 +10,21 @@
     <input id="cover_url" type="text" name="cover_url" placeholder="image url">
     <label for="genre_id">Select or Add a Genre</label>
     <select id="genre_id" name="genre_id">
-        <option selected disabled>Pick a Genre</option>
+      <option selected disabled>Pick a Genre</option>
       {{#each genres}}
         <option value="{{id}}">{{genre_name}}</option>
       {{/each}}
     </select>
     <input class="inline" id="genre_id" type="text" name="genre_id" placeholder="New Genre">
-    <input type="submit" value="Add Book">
+
+    <label for="author_id">Select an Author</label>
+    <select id="author_id" name="author_id">
+      <option selected disabled>Select an Author</option>
+      {{#each authors}}
+        <option value="{{id}}">{{first_name}} {{last_name}}</option>
+      {{/each}}
+    </select>
+
+    <input class="anchor" type="submit" value="Add Book">
   </form>
 </section>

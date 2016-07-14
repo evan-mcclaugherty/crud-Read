@@ -16,9 +16,12 @@ router.get('/', function(req, res, next) {
 
 router.get('/new', function(req, res, next) {
     api.book.getGenres().then(genres => {
-        res.render('book/addBook', {
-            genres: genres
-        });
+        api.author.getAuthors().then(authors => {
+            res.render('book/addBook', {
+                genres: genres,
+                authors: authors
+            });
+        })
     })
 });
 
