@@ -2,6 +2,17 @@
   <img src="{{author.portrait_url}}" />
   <div>
     {{author.first_name}} {{author.last_name}}
+    <br>
+    <p>Author of:</p>
+    <ul>
+      {{#each bookNames}}
+        <li>
+          <a href="/book/specific/{{id}}">
+              {{title}}
+          </a>
+        </li>
+      {{/each}}
+    </ul>
     <br> {{author.biography}}
     <br>
     <form action="/author/{{author.id}}?_method=DELETE" method="post">

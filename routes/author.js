@@ -32,12 +32,14 @@ router.post('/', (req, res, next) => {
 })
 
 router.get('/delete/:id', (req, res, next) => {
-    api.author.getAuthor(req.params.id).then(author => {
+    api.author.getSingleBookWithAuthors(req.params.id).then(data => {
         res.render('author/deleteAuthor', {
-            author: author
+            author: data.author[0],
+            bookNames: data.bookNames
         })
     })
 })
+
 router.delete('/:id', (req, res, next) => {
     api.author.deleteAuthor(req.params.id).then(() => {
         res.redirect('/author')
