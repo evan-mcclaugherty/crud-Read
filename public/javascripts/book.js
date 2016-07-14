@@ -1,3 +1,0 @@
-$('#select').click(() => {
-    console.log();
-})
