@@ -1,4 +1,4 @@
-<section class="editAuthor">
+<section class="edit">
   <h2>Edit Author</h2>
   <form action="/author/{{author.id}}?_method=PUT" method="post">
     <label for="first_name">First Name</label>
@@ -9,6 +9,6 @@
     <input id="biography" type="text" name="biography" value="{{author.biography}}">
     <label for="portrait_url">Portrait Image</label>
     <input id="portrait_url" type="text" name="portrait_url" value="{{author.portrait_url}}">
-    <input type="submit" value="Edit Author">
+    <input class="anchor" type="submit" value="Edit Author">
   </form>
 </section>

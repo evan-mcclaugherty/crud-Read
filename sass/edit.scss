@@ -1,0 +1,22 @@
+.edit {
+    width: 60vw;
+    margin-left: 2rem;
+    h2 {
+        margin-bottom: 2rem;
+    }
+    .inline {
+        display: inline;
+    }
+    .anchor {
+        cursor: pointer;
+        margin-top: 2rem;
+    }
+    label {
+        width: 100%;
+        font-size: 1rem;
+        margin-bottom: .5rem;
+    }
+    input {
+        width: 100%;
+    }
+}

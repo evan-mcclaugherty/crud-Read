@@ -1,4 +1,4 @@
-<section class="editBook">
+<section class="edit">
   <h2>Edit Book</h2>
   <form action="/book/{{book.id}}?_method=PUT" method="post">
     <label for="title">Title</label>
@@ -15,6 +15,6 @@
       {{/each}}
     </select>
     <input class="inline" id="genre_id" type="text" name="genre_id" placeholder="New Genre">
-    <input type="submit" value="Edit Book">
+    <input class="anchor" type="submit" value="Edit Book">
   </form>
 </section>

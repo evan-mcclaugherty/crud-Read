@@ -3,6 +3,14 @@ main {
         min-width: 20vw;
         li {
             min-height: 40vh;
+            font-size: 2rem;
+            a {
+                text-decoration: none;
+                padding: 1.5rem;
+                background-color: $primary-color;
+                color: $white;
+                width: 100%;
+            }
         }
     }
 }

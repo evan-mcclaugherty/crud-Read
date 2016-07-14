@@ -1,4 +1,4 @@
-<section class="flex deleteBook">
+<section class="flex delete">
   <img src="{{book.cover_url}}" />
   <div>
     {{book.title}}
@@ -19,7 +19,7 @@
     {{book.description}}
     <br>
     <form action="/book/{{book.id}}?_method=DELETE" method="post">
-      <button type="submit">Delete {{book.title}}?</button>
+      <button class="deleteAnchor" type="submit">Delete {{book.title}}?</button>
     </form>
   </div>
 </section>

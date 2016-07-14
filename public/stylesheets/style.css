@@ -18,30 +18,6 @@
 .align-content {
   align-content: center; }
 
-.books {
-  padding: 1rem;
-  margin-bottom: 2rem; }
-  .books img {
-    height: 20vh;
-    width: auto; }
-
-h1 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 2rem;
-  font-weight: 700; }
-
-li,
-p {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
-  font-weight: 400; }
-
-a {
-  text-decoration: none;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.5rem;
-  font-weight: 400; }
-
 input,
 label {
   display: block; }
@@ -49,34 +25,70 @@ label {
 input {
   margin-bottom: 1rem; }
 
+h1 {
+  font-size: 3rem;
+  margin-left: 3rem; }
+
+h2 {
+  font-size: 2rem; }
+
+.anchor {
+  font-size: 1.5rem;
+  border: 1px solid black;
+  padding: 1rem;
+  text-decoration: none;
+  background-color: #9ada59; }
+
+.deleteAnchor {
+  font-size: 1.5rem;
+  border: 1px solid black;
+  padding: 1rem;
+  text-decoration: none;
+  background-color: #f1574b; }
+
 header {
   background-color: #adadad;
-  color: #b02041;
-  padding: 1rem; }
+  color: #79177d;
+  margin-bottom: 2rem; }
   header img {
     max-height: 15vh;
-    width: auto;
-    border-radius: 100%; }
+    width: auto; }
 
 main nav {
   min-width: 20vw; }
   main nav li {
-    min-height: 40vh; }
+    min-height: 40vh;
+    font-size: 2rem; }
+    main nav li a {
+      text-decoration: none;
+      padding: 1.5rem;
+      background-color: #b02041;
+      color: #F0F0F0;
+      width: 100%; }
 
-.editBook .inline {
-  display: inline; }
+.edit {
+  width: 60vw;
+  margin-left: 2rem; }
+  .edit h2 {
+    margin-bottom: 2rem; }
+  .edit .inline {
+    display: inline; }
+  .edit .anchor {
+    cursor: pointer;
+    margin-top: 2rem; }
+  .edit label {
+    width: 100%;
+    font-size: 1rem;
+    margin-bottom: .5rem; }
+  .edit input {
+    width: 100%; }
 
-.bookForm h2 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 2rem;
-  font-weight: 300;
-  margin-bottom: 1rem; }
-
-.bookForm,
-.bookForm select {
-  display: inline;
-  margin-right: 1rem; }
-
-.bookForm,
-.bookForm .inline {
-  display: inline; }
+.authors, .books, .specific, .delete {
+  margin-bottom: 2rem;
+  border: 1px solid black;
+  padding: 1rem;
+  width: 80%; }
+  .authors img, .books img, .specific img, .delete img {
+    height: 20vh;
+    width: auto;
+    margin-right: 2rem; }

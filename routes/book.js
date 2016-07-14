@@ -57,7 +57,7 @@ router.post('/', (req, res, next) => {
 
 router.get('/delete/:id', (req, res, next) => {
     api.book.getSingleBookWithAuthors(req.params.id).then(data => {
-        res.render('book/specificBook', {
+        res.render('book/deleteBook', {
             book: data.book[0],
             authorNames: data.authorNames
         })

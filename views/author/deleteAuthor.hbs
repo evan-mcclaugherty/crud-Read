@@ -1,4 +1,4 @@
-<section class="flex deleteAuthor">
+<section class="flex delete">
   <img src="{{author.portrait_url}}" />
   <div>
     {{author.first_name}} {{author.last_name}}
@@ -16,7 +16,7 @@
     <br> {{author.biography}}
     <br>
     <form action="/author/{{author.id}}?_method=DELETE" method="post">
-      <button type="submit">Delete {{author.first_name}} {{author.last_name}}?</button>
+      <button class="deleteAnchor" type="submit">Delete {{author.first_name}} {{author.last_name}}?</button>
     </form>
   </div>
 </section>

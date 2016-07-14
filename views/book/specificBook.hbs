@@ -1,10 +1,10 @@
-<section class="flex specificBook">
+<section class="flex specific">
   <img src="{{book.cover_url}}" />
   <div>
     {{book.title}}
     <br>
     <p>
-        Author(s):
+      Author(s):
     </p>
     <ul>
       {{#each authorNames}}
@@ -15,8 +15,7 @@
         </li>
       {{/each}}
     </ul>
-    <br>
-    {{book.description}}
+    <br> {{book.description}}
     <br>
     <a href="/book/delete/{{book.id}}">
       <i class="fa fa-remove" aria-hidden="true"></i>
