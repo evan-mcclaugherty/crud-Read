@@ -1,5 +1,13 @@
+<script src="/javascripts/book.js"></script>
+<select id="select">
+  <option selected value="0">All Genres</option>
+  {{#each genres}}
+    <option value="{{id}}">{{genre_name}} Genre</option>
+  {{/each}}
+</select>
+
 {{#each data}}
-  <section class="flex books">
+  <section class="flex books" id="{{genre_id}}">
     <img src="{{cover_url}}" />
     <div>
       <a href="/book/specific/{{id}}">

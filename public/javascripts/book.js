@@ -1,0 +1,3 @@
+$('#select').click(() => {
+    console.log();
+})

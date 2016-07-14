@@ -4,8 +4,11 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
     api.book.getAuthorsWithBooks().then(data => {
-        res.render('book/book', {
-            data: data
+        api.book.getGenres().then(genres => {
+            res.render('book/book', {
+                genres: genres,
+                data: data
+            })
         })
     })
 });
