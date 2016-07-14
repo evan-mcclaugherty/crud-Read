@@ -3,10 +3,9 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-    api.book.getAllBooks().then(books => {
-        api.author.getAuthor(books)
+    api.book.getAllBooksWithAuthor().then(data => {
         res.render('book/book', {
-            book: books
+            data: data
         })
     })
 });
@@ -21,9 +20,10 @@ router.get('/new', function(req, res, next) {
 });
 
 router.get('/specific/:id', (req, res, next) => {
-    api.book.getBook(req.params.id).then(book => {
+    api.book.getSingleBookWithAuthors(req.params.id).then(data => {
         res.render('book/specificBook', {
-            book: book
+            book: data.book[0],
+            authorNames: data.authorNames
         })
     })
 })
@@ -53,13 +53,14 @@ router.post('/', (req, res, next) => {
 })
 
 router.get('/delete/:id', (req, res, next) => {
-    api.book.getBook(req.params.id).then(book => {
-        res.render('book/deleteBook', {
-            book: book
+    api.book.getSingleBookWithAuthors(req.params.id).then(data => {
+        res.render('book/specificBook', {
+            book: data.book[0],
+            authorNames: data.authorNames
         })
-
     })
 })
+
 
 router.delete('/:id', (req, res, next) => {
     api.book.deleteBook(req.params.id).then(() => {

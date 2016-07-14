@@ -7,7 +7,20 @@ module.exports = {
         }, 'id')
     },
     getBook: (id) => knex('book').where('id', id).first(),
-    getAllBooks: () => knex('book').select(),
+    getAllBooksWithAuthor: () => knex('book').join('author_book', 'book.id', 'author_book.author_id').join('author', 'author.id', 'author_book.author_id'),
+
+
+    getSingleBookWithAuthors: (id) => knex('book').where('id', id)
+        .then(book => knex('author_book').where('book_id', id).pluck('author_id')
+            .then(authorIds => {
+                return knex('author').whereIn('author.id', authorIds).returning('first_name', 'last_name').then(authorNames => {
+                    return {
+                        book,
+                        authorNames
+                    }
+                })
+            })),
+
     getGenres: () => knex('genre').select(),
     deleteBook: (id) => knex('book').where('id', id).del(),
     editBook: function(id, data) {

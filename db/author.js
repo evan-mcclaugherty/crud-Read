@@ -13,7 +13,6 @@ module.exports = {
         }).where('id', id)
     },
     insertAuthor: data => {
-        console.log(data);
         return knex('author').insert({
             first_name: data.first_name,
             last_name: data.last_name,
