@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-    api.author.getAllAuthors().then(authors => {
+    api.author.getBookWithAuthors().then(authors => {
         res.render('author/author', {
             author: authors
         })
@@ -12,12 +12,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/specific/:id', (req, res, next) => {
-    api.author.getAuthor(req.params.id).then(author => {
+    api.author.getSingleBookWithAuthors(req.params.id).then(data => {
+        console.log(data);
         res.render('author/specificAuthor', {
-            author: author
+            author: data.author[0],
+            bookNames: data.bookNames
         })
     })
 })
+
 router.get('/new', function(req, res, next) {
     res.render('author/addAuthor');
 });
@@ -52,9 +55,5 @@ router.get('/edit/:id', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
     api.author.editAuthor(req.params.id, req.body).then(() => res.redirect('/author'))
 })
-
-
-
-
 
 module.exports = router;

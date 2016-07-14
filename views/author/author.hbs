@@ -5,7 +5,11 @@
       <a href="/author/specific/{{id}}">
           {{first_name}} {{last_name}}
       </a>
-      <br> {{biography}}
+      <br>
+      <a href="/book/specific/{{book_id}}">
+        <p>Author of: {{title}}</p>
+      </a>
+      {{biography}}
       <br>
       <a href="/author/delete/{{id}}">
         <i class="fa fa-remove" aria-hidden="true"></i>

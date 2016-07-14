@@ -6,9 +6,10 @@ module.exports = {
             genre_name: genre
         }, 'id')
     },
-    getBook: (id) => knex('book').where('id', id).first(),
-    getAllBooksWithAuthor: () => knex('book').join('author_book', 'book.id', 'author_book.author_id').join('author', 'author.id', 'author_book.author_id'),
 
+    getBook: (id) => knex('book').where('id', id).first(),
+
+    getAllBooksWithAuthor: () => knex('book').join('author_book', 'book.id', 'author_book.author_id').join('author', 'author.id', 'author_book.author_id'),
 
     getSingleBookWithAuthors: (id) => knex('book').where('id', id)
         .then(book => knex('author_book').where('book_id', id).pluck('author_id')
@@ -22,7 +23,9 @@ module.exports = {
             })),
 
     getGenres: () => knex('genre').select(),
+
     deleteBook: (id) => knex('book').where('id', id).del(),
+
     editBook: function(id, data) {
         if (data.genre_id[1]) {
             return this.insertGenre(data.genre_id[1]).then(newId => {
@@ -42,6 +45,7 @@ module.exports = {
             }).where('id', id)
         }
     },
+
     insertBook: function(data) {
         if (data.genre_id[1]) {
             return this.insertGenre(data.genre_id[1]).then(id => {
